@@ -36,4 +36,23 @@ class SportTeamTest < MiniTest::Test
     assert_equal(["luis", "colin", "Finn"], team_players)
   end
 
+  def test_find_a_player
+    team1 = Team.new("Hearts", ["luis", "colin"], "Sandy")
+    team_players = team1.find_a_player("luis")
+    assert_equal(true, team_players)
+  end
+
+  def test_team_won
+    team1 = Team.new("Hearts", ["luis", "colin"], "Sandy")
+    team_players = team1.update_team_points("win")
+    assert_equal(3, team_players)
+  end
+
+  def test_team_lose
+    team1 = Team.new("Hearts", ["luis", "colin"], "Sandy")
+    team_players = team1.update_team_points("lose")
+    assert_equal(0, team_players)
+  end
+
+
 end

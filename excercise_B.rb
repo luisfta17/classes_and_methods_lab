@@ -22,10 +22,23 @@ class Team
     @team_name = team_name
     @players = players
     @coach = coach
+    @points = 0
   end
 
   def add_team_player(player_name)
     @players.push(player_name)
+  end
+
+  def find_a_player(player_name)
+   @players.include?(player_name)
+  end
+
+  def update_team_points(win_or_lose)
+   result = {
+     "win" => 3,
+     "lose" => 0
+   }
+   @points += result[win_or_lose]
   end
 
   # def get_team_name
