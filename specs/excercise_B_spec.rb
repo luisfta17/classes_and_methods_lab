@@ -50,5 +50,4 @@ class SportTeamTest < MiniTest::Test
     assert_equal(1, @team1.update_team_points("draw"))
   end
 
-
 end
