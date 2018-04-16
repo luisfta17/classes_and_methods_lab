@@ -16,12 +16,16 @@ class Team
     :coach
   )
 
-  attr_writer(:coach)
-  
+  attr_writer(:coach, :players)
+
   def initialize(team_name, players, coach)
     @team_name = team_name
     @players = players
     @coach = coach
+  end
+
+  def add_team_player(player_name)
+    @players.push(player_name)
   end
 
   # def get_team_name
